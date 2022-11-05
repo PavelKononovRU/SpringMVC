@@ -6,18 +6,10 @@
     <title></title>
 </head>
 <body>
-<h1>Car List</h1>
-<table>
-    <tr>
-        <th>mark</th>
-        <th>model</th>
-        <th>horsePower</th>
-    </tr>
-    <tr th:each="CAR : ${car}">
-        <td th:text="${CAR.getMark()}"></td>
-        <td th:text="${CAR.getModel()}"></td>
-        <td th:text="${CAR.getHorsePower()}"></td>
-    </tr>
-</table>
+<div>
+    <th:block th:each="msg : ${car}">
+        <h1 th:text="${msg}"></h1>
+    </th:block>
+</div>
 </body>
 </html>
