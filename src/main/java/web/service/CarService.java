@@ -1,3 +1,4 @@
+/*
 package web.service;
 
 import org.springframework.stereotype.Component;
@@ -11,6 +12,7 @@ import java.util.List;
 public class CarService {
     List<Car> cars = new ArrayList<>();
     static public void  printCars(int count) {
+*/
 /*        List<Object> list = new ArrayList<>();
         list.add(new Car("BMW", "3er", 192));
         list.add(new Car("Toyota", "Camry", 275));
@@ -20,7 +22,9 @@ public class CarService {
 
         for (Object obj : list) {
             System.out.println(obj.toString());
-        }*/
+        }*//*
+
     }
 
 }
+*/
