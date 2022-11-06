@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.dao.CarDaoImpl;
 import web.model.Car;
 import web.service.CarService;
-import web.service.CarServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +16,9 @@ import java.util.List;
 public class CarController {
     @Autowired
     CarService service;
-    List<Car> cars = new ArrayList<>();
-
     @GetMapping(value = "/cars")
     public String printCars(@RequestParam(value = "count", required = false) int count, ModelMap model) {
+        List<Car> cars = new ArrayList<>();
 
         cars.add(CarDaoImpl.bmw);
         cars.add(CarDaoImpl.toyota);
