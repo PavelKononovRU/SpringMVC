@@ -1,9 +1,10 @@
 package web.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.Car;
 
-@Component
+@Repository
 public class CarDaoImpl implements CarDao {
 
     public static final Car bmw = new Car("BMW", "3er", 192);
