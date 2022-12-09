@@ -1,23 +1,33 @@
 package web.service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
+import web.dao.CarDaoImpl;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class CarServiceImpl implements CarService {
+    List<Car> cars = new ArrayList<>();
+
+    {
+        cars.add(CarDaoImpl.bmw);
+        cars.add(CarDaoImpl.toyota);
+        cars.add(CarDaoImpl.volkswagen);
+        cars.add(CarDaoImpl.renault);
+        cars.add(CarDaoImpl.chevrolet);
+    }
+
+
     @Override
-    public  List<Car> getCarsList(@RequestParam(value = "count", required = false) int count, List<Car> list) {
-        List<Car> getListCars = new ArrayList<>();
-        if (count <= list.size()) {
-            for (int i = 0; i < count; i++) {
-                getListCars.add(i, list.get(i));
-            }
-        } else return list;
-        return getListCars;
+    public List<Car> getAllCars() {
+        return cars;
+    }
+
+    @Override
+    public List<Car> getCars(Integer count) {
+        return cars.stream().limit(count).toList();
     }
 }
 
